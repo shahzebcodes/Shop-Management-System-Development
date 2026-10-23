@@ -1,0 +1,85 @@
+/* Low-Glare Retail System CSS Custom Properties */
+:root {
+  /* 1. Primary Brand (Emerald Teal) */
+  --primary: #0F766E;
+  --primary-hover: #115E59;
+  --primary-active: #042F2E;
+  --primary-light: #CCFBF1;
+  --primary-light-hover: #99F6E4;
+  --primary-50: #F0FDFA;
+  --primary-text: #0F766E;
+
+  /* 2. Navigation Surfaces (Slate Navy) */
+  --nav-bg: #0F172A;
+  --nav-surface: #1E293B;
+  --nav-hover: #334155;
+  --nav-border: #1E293B;
+  --nav-text: #F8FAFC;
+  --nav-text-muted: #94A3B8;
+  --nav-active-indicator: #0D9488;
+
+  /* 3. App Background & Cards */
+  --bg-app: #F1F5F9;
+  --bg-card: #FFFFFF;
+  --bg-card-muted: #F8FAFC;
+  --bg-input: #FFFFFF;
+  --border-subtle: #E2E8F0;
+  --border-focus: #0F766E;
+  --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+  --shadow-drawer: 0 -8px 24px rgba(15, 23, 42, 0.12);
+
+  /* 4. Text Hierarchy */
+  --text-heading: #0F172A;
+  --text-body: #334155;
+  --text-muted: #64748B;
+  --text-subtle: #94A3B8;
+  --text-inverse: #FFFFFF;
+
+  /* 5. Status & Financial Semantic Colors */
+  /* Green: Cash / Profit / In-Stock */
+  --success: #16A34A;
+  --success-hover: #15803D;
+  --success-bg: #DCFCE7;
+  --success-border: #BBF7D0;
+  --success-text: #166534;
+
+  /* Amber: Udhaar / Credit / Pending */
+  --warning: #D97706;
+  --warning-hover: #B45309;
+  --warning-bg: #FEF3C7;
+  --warning-border: #FDE68A;
+  --warning-text: #92400E;
+
+  /* Crimson Red: Low Stock / Overdue / Danger */
+  --danger: #DC2626;
+  --danger-hover: #B91C1C;
+  --danger-bg: #FEE2E2;
+  --danger-border: #FECACA;
+  --danger-text: #991B1B;
+
+  /* Royal Blue: Supplier / Stock-In / Info */
+  --info: #2563EB;
+  --info-hover: #1D4ED8;
+  --info-bg: #DBEAFE;
+  --info-border: #BFDBFE;
+  --info-text: #1E40AF;
+
+  /* 6. Typography & Layout Metrics */
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Hardware / Shell dimensions */
+  --sidebar-width: 250px;
+  --sidebar-rail-width: 72px;
+  --header-height-desktop: 64px;
+  --header-height-mobile: 56px;
+  --bottom-nav-height: 64px;
+  --min-touch-target: 44px;
+}

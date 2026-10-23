@@ -1,0 +1,224 @@
+/* Responsive Rules: Mobile (360px - 767px), Tablet (768px - 1023px), Desktop (1024px - 1920px+) */
+
+/* Base App Shell Layout */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-app);
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  position: relative;
+}
+
+.main-content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 100vh;
+  transition: margin-left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================================================
+   DESKTOP VIEWPORT (>= 1024px)
+   ======================================================== */
+@media (min-width: 1024px) {
+  .desktop-only {
+    display: block !important;
+  }
+  .desktop-flex {
+    display: flex !important;
+  }
+  .desktop-grid {
+    display: grid !important;
+  }
+  .mobile-only {
+    display: none !important;
+  }
+
+  /* Desktop sidebar margin shift */
+  .main-content-wrapper.with-sidebar {
+    margin-left: var(--sidebar-width);
+  }
+
+  .main-content-wrapper.with-sidebar-rail {
+    margin-left: var(--sidebar-rail-width);
+  }
+
+  /* Top sticky header desktop */
+  .top-header {
+    height: var(--header-height-desktop);
+    padding: 0 1.5rem;
+  }
+
+  /* Main workspace 12-column grid container */
+  .workspace-container {
+    padding: 1.5rem;
+    max-width: 1800px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.25rem;
+  }
+
+  .col-12 { grid-column: span 12; }
+  .col-8 { grid-column: span 8; }
+  .col-7 { grid-column: span 7; }
+  .col-6 { grid-column: span 6; }
+  .col-5 { grid-column: span 5; }
+  .col-4 { grid-column: span 4; }
+  .col-3 { grid-column: span 3; }
+
+  /* POS 60/40 Split Desktop Layout */
+  .pos-split-layout {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 1.25rem;
+    align-items: start;
+    height: calc(100vh - var(--header-height-desktop) - 1.5rem);
+  }
+
+  .pos-catalog-panel {
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+  }
+
+  .pos-cart-panel {
+    height: 100%;
+    position: sticky;
+    top: calc(var(--header-height-desktop) + 0.75rem);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Desktop Table view is visible, mobile cards hidden */
+  .responsive-table-view {
+    display: table;
+    width: 100%;
+  }
+
+  .responsive-card-view {
+    display: none;
+  }
+
+  /* Master-Detail Khata Desktop */
+  .khata-master-detail {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 1.25rem;
+    height: calc(100vh - var(--header-height-desktop) - 2rem);
+  }
+}
+
+/* ========================================================
+   TABLET VIEWPORT (768px - 1023px)
+   ======================================================== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main-content-wrapper.with-sidebar,
+  .main-content-wrapper.with-sidebar-rail {
+    margin-left: var(--sidebar-rail-width);
+  }
+
+  .grid-12 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+  }
+
+  .col-12, .col-8, .col-7 { grid-column: span 6; }
+  .col-6, .col-5, .col-4 { grid-column: span 3; }
+  .col-3 { grid-column: span 3; }
+
+  .pos-split-layout {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 1rem;
+  }
+}
+
+/* ========================================================
+   MOBILE VIEWPORT (< 768px)
+   ======================================================== */
+@media (max-width: 767px) {
+  .desktop-only,
+  .desktop-flex,
+  .desktop-grid {
+    display: none !important;
+  }
+  .mobile-only {
+    display: block !important;
+  }
+  .mobile-flex {
+    display: flex !important;
+  }
+
+  .main-content-wrapper {
+    margin-left: 0 !important;
+    padding-bottom: calc(var(--bottom-nav-height) + 1.5rem);
+  }
+
+  .top-header {
+    height: var(--header-height-mobile);
+    padding: 0 1rem;
+  }
+
+  .workspace-container {
+    padding: 0.875rem;
+  }
+
+  /* 2x2 KPI Grid for mobile */
+  .mobile-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  /* Vertical card stack instead of horizontal wide tables */
+  .responsive-table-view {
+    display: none !important;
+  }
+
+  .responsive-card-view {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* POS Mobile Layout: Catalog full width + floating cart trigger / slide-up sheet */
+  .pos-split-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+  }
+
+  .pos-cart-panel {
+    position: static;
+  }
+
+  /* Touch Target Rules */
+  button, 
+  .touch-target, 
+  input[type="button"], 
+  input[type="submit"] {
+    min-height: var(--min-touch-target);
+  }
+
+  /* Inputs on mobile must be >= 16px to prevent iOS auto-zoom */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+
+  /* Khata single column stacked */
+  .khata-master-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+  }
+}

@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;background-color:#f8f9ff;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed": "#9cf2e8", "error": "#ba1a1a", "primary-fixed-dim": "#80d5cb", "on-secondary-fixed-variant": "#3f465c", "on-background": "#0b1c30", "on-error-container": "#93000a", "on-primary-fixed-variant": "#00504a", "secondary-fixed": "#dae2fd", "on-tertiary-container": "#e6e9ff", "surface-container-highest": "#d3e4fe", "inverse-surface": "#213145", "surface-container": "#e5eeff", "on-primary-container": "#a3faef", "surface-dim": "#cbdbf5", "surface-container-low": "#eff4ff", "tertiary-fixed": "#dbe1ff", "primary-container": "#0f766e", "outline-variant": "#bdc9c6", "on-surface-variant": "#3e4947", "on-secondary-container": "#5c647a", "on-primary-fixed": "#00201d", "on-tertiary-fixed-variant": "#003ea8", "surface-container-lowest": "#ffffff", "surface-container-high": "#dce9ff", "tertiary-fixed-dim": "#b4c5ff", "on-error": "#ffffff", "inverse-primary": "#80d5cb", "surface-tint": "#006a63", "on-tertiary": "#ffffff", "error-container": "#ffdad6", "inverse-on-surface": "#eaf1ff", "on-tertiary-fixed": "#00174b", "secondary-container": "#dae2fd", "secondary-fixed-dim": "#bec6e0", "surface-bright": "#f8f9ff", "on-primary": "#ffffff", "on-secondary-fixed": "#131b2e", "on-surface": "#0b1c30", "tertiary-container": "#1e5fe7", "surface": "#f8f9ff", "surface-variant": "#d3e4fe", "on-secondary": "#ffffff", "outline": "#6e7977", "background": "#f8f9ff", "secondary": "#565e74", "primary": "#005c55", "tertiary": "#0047bf" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-lg": "1rem", "space-xl": "1.5rem", "space-md": "0.75rem", "space-xs": "0.25rem", "margin": "1rem", "space-sm": "0.5rem", "gutter": "0.75rem", "gutter-desktop": "1.25rem", "margin-desktop": "2rem" }, fontFamily: { "headline-sm": ["Plus Jakarta Sans"], "numeric-md": ["JetBrains Mono"], "numeric-hero": ["JetBrains Mono"], "label-sm": ["JetBrains Mono"], "numeric-lg": ["JetBrains Mono"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "display-lg": ["JetBrains Mono"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "display-lg-mobile": ["JetBrains Mono"], "body-lg": ["Plus Jakarta Sans"], "numeric-hero-mobile": ["JetBrains Mono"] }, fontSize: { "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "numeric-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}], "numeric-hero": ["32px", {"lineHeight": "40px", "fontWeight": "700"}], "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}], "numeric-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}], "headline-lg": ["30px", {"lineHeight": "38px", "fontWeight": "700"}], "label-md": ["13px", {"lineHeight": "18px", "fontWeight": "600"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}], "display-lg": ["36px", {"lineHeight": "44px", "fontWeight": "700"}], "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}], "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "display-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}], "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}], "numeric-hero-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}] } } } };</script></head><body class="bg-background font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-14 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="DukaanKhata Emblem" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UG5W2jzAODecaLGScO3j2uXmREMlrMhH4i2a2Nb2X3B86Ai5Hi8FD-5O1dfeKXdSs2LursXMc_LGSOgzY9FQik6GUkfk17uWNTisX1VLVzqFdvJ98o9KURxXKGe9c_rcdLxh4IyZun8y8c7VhYnT1PVRrsBu90DcXZRUlTF8YpeQpeX55H1FTkl7vSLsCcRLLfGr4b31wXihYFPZLg0eE0SKJLfG3_g5BAvtYmosZHX-LRlIlycDbOO4Jd"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface truncate tracking-tight">Al-Madina General Store</span><span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-primary-container/15 text-primary text-[10px] font-semibold leading-none"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>Live</span></div><span class="font-body-sm text-body-sm text-on-surface-variant truncate">Inventory</span></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center relative rounded-full text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 flex items-center justify-center min-w-[16px] h-4 px-1 rounded-full bg-error text-on-error font-label-sm text-[10px] font-bold">3</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover ml-space-xs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiWaLvDAxreKbBokqJw890jVmJWb_iw_BF5vNiYCQ4QfdHAijrpEAthqkbW3cbP_TD3z_gR-903A0izmOaxMSu34O2yrQxb2Pqg9weSxtiRFyu3png3emgXBgllV5TY8umsjbStOAjK32Iv8e1kXouygxT1IlyGM_TntaEk2CYSJ020_YOqIpL-cNKsdXMfRfr3RtbKkq1RH0bGevc1JXjHKJdktKqS7DgvNbYjIg4zjE_eSPB6r12VQ"/></div></div></header><main class="flex-1 flex flex-col relative w-full pt-14 pb-20 bg-background"><div class="flex flex-col w-full pb-10">
+<!-- Top Search & Quick Action Reticle Bar -->
+<div class="px-margin pt-space-md flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="flex-1 flex items-center bg-surface-container-lowest rounded-xl px-space-md py-2.5 shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[20px] mr-2">search</span>
+<input class="w-full bg-transparent border-none outline-none font-body-md text-on-surface placeholder:text-secondary placeholder:font-normal text-sm" id="product-search-input" placeholder="Search items, SKU, or brand..." type="text"/>
+<button aria-label="Voice Search" class="text-secondary hover:text-primary transition-colors flex items-center justify-center p-1" id="voice-search-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+</div>
+<!-- Quick Barcode Camera Viewfinder Trigger -->
+<button aria-label="Scan Barcode" class="h-11 w-11 flex-shrink-0 bg-inverse-surface rounded-xl flex items-center justify-center shadow-md active:scale-95 transition-transform" id="open-scanner-btn" type="button">
+<span class="material-symbols-outlined text-primary-fixed text-[22px]">qr_code_scanner</span>
+</button>
+<!-- Top Primary Add CTA -->
+<button class="h-11 px-3 bg-primary text-on-primary rounded-xl flex items-center gap-1.5 shadow-md active:bg-primary-container transition-colors" id="open-add-drawer-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span class="font-headline-sm text-body-sm font-semibold tracking-tight">Add</span>
+</button>
+</div>
+<!-- Category Dropdown + Status Pills Row -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="relative inline-flex items-center">
+<select class="appearance-none bg-surface-container-high text-on-surface font-label-md text-label-md pl-3 pr-8 py-1.5 rounded-lg border-none outline-none font-semibold cursor-pointer" id="category-filter">
+<option value="all">All Categories (8)</option>
+<option value="grocery">Grocery &amp; Staples</option>
+<option value="dairy">Dairy &amp; Chilled</option>
+<option value="pulses">Pulses &amp; Spices</option>
+<option value="toiletries">Toiletries &amp; Care</option>
+<option value="beverages">Beverages &amp; Snacks</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 text-on-surface-variant pointer-events-none text-[18px]">expand_more</span>
+</div>
+<span class="text-on-surface-variant font-label-sm text-label-sm">412 SKUs Tracked</span>
+</div>
+<!-- Filter Pills Carousel -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none -mx-margin px-margin">
+<button class="status-pill active-pill whitespace-nowrap px-3 py-1.5 rounded-lg bg-inverse-surface text-on-primary font-label-sm text-label-sm shadow-sm transition-all" data-filter="all">
+          All (412)
+        </button>
+<button class="status-pill whitespace-nowrap px-3 py-1.5 rounded-lg bg-error-container text-on-error-container font-label-sm text-label-sm font-bold flex items-center gap-1 transition-all" data-filter="low">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+          Low Stock (14)
+        </button>
+<button class="status-pill whitespace-nowrap px-3 py-1.5 rounded-lg bg-surface-container-highest text-error font-label-sm text-label-sm font-bold transition-all" data-filter="out">
+          Out of Stock (3)
+        </button>
+<button class="status-pill whitespace-nowrap px-3 py-1.5 rounded-lg bg-surface-container-high text-tertiary-container font-label-sm text-label-sm font-bold transition-all" data-filter="fast">
+          ⚡ Fast Moving (28)
+        </button>
+</div>
+</div>
+</div>
+<!-- Summary Strip: Inventory Valuation Bento Box -->
+<div class="px-margin pt-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">account_balance_wallet</span>
+<span class="font-headline-sm text-body-sm text-on-surface font-bold tracking-tight">Stock Valuation</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-bold">
+          LIVE AUDIT
+        </span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-1">
+<div class="flex flex-col bg-surface-container-low rounded-lg p-2.5">
+<span class="text-on-surface-variant font-body-sm text-[11px] leading-none mb-1">Purchase Cost</span>
+<span class="font-numeric-lg text-numeric-lg text-on-surface font-bold">Rs. 8,45,200</span>
+<span class="text-secondary font-label-sm text-[10px] mt-1">412 Products</span>
+</div>
+<div class="flex flex-col bg-surface-container-low rounded-lg p-2.5">
+<span class="text-on-surface-variant font-body-sm text-[11px] leading-none mb-1">Retail Value</span>
+<span class="font-numeric-lg text-numeric-lg text-primary font-bold">Rs. 10,22,400</span>
+<span class="text-on-primary-fixed-variant font-label-sm text-[10px] mt-1">Realizable Gross</span>
+</div>
+</div>
+<!-- Expected Profit Bar -->
+<div class="bg-primary-container/10 rounded-lg p-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-[11px] text-on-surface-variant leading-none">Net Expected Margin</span>
+<span class="font-numeric-md text-numeric-md text-on-surface font-bold mt-0.5">Rs. 1,77,200</span>
+</div>
+</div>
+<div class="text-right">
+<span class="inline-block px-2 py-0.5 rounded bg-primary text-on-primary font-numeric-md text-label-sm font-bold">
+            +20.9% ROI
+          </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Inventory Card Feed -->
+<div class="px-margin pt-space-lg flex flex-col gap-space-md" id="product-list-container">
+<!-- Card 1: Basmati Rice (In-Stock & Fractional Decimal) -->
+<div class="product-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm" data-cat="grocery" data-sku="8901234567890" data-status="instock">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex gap-3 min-w-0">
+<img class="w-14 h-14 rounded-lg object-cover flex-shrink-0 bg-surface-container" data-alt="Premium aged Super Kernel Basmati long grain rice packed in transparent sealed retail burlap bag with golden culinary seal Al-Madina style high contrast retail packaging photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAawbGmiqeP24h2lkPo6TF0gJnwJLWuwlmdEWJdGDu4KD5o_u1DWti6Z_JJIAmk47H5652z7UYIqMnvZcCkFD4mQPwmHIUk6EDdUiT_cJrKoB8MTuq0qMdXhkNBJeAoA2cTRFqK_CMeClqlr6l57PmfFgsOT1sprc0RcJzjYZ0N3UX-qjhaYD45AbaLLH4ZZgbYzfwpttzHP3eIclW48WdYCtcYSKCbyyRUzhS_oRjVahhX6R3SrtMHAA"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Super Kernel Basmati Rice</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+<span>Grocery</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm bg-surface-container-high px-1.5 py-0.5 rounded text-on-surface">Unit: kg</span>
+</div>
+</div>
+</div>
+<!-- Semantic In-Stock Badge -->
+<span class="flex-shrink-0 px-2 py-0.5 rounded font-label-sm text-label-sm font-bold bg-primary-fixed text-on-primary-fixed-variant">
+          IN STOCK
+        </span>
+</div>
+<!-- Metrics Row -->
+<div class="grid grid-cols-2 gap-2 bg-surface-container-low rounded-lg p-2.5">
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-body-sm text-[11px]">Current Available</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-numeric-lg text-numeric-lg font-bold text-on-surface">45.500</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">kg</span>
+</div>
+<span class="text-secondary font-label-sm text-[10px] mt-0.5">Min Alert: 20.000 kg</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-on-surface-variant font-body-sm text-[11px]">Sale / Cost (kg)</span>
+<div class="flex items-baseline justify-end gap-1 mt-0.5">
+<span class="font-numeric-md text-numeric-md font-bold text-primary">Rs. 340</span>
+<span class="font-body-sm text-body-sm text-secondary line-through">280</span>
+</div>
+<span class="text-primary font-label-sm text-[11px] font-bold mt-0.5">+21.4% (Rs. 60 profit)</span>
+</div>
+</div>
+<!-- Quick Action Ergonomic Row -->
+<div class="flex items-center justify-between pt-1 gap-2">
+<span class="font-label-sm text-label-sm text-secondary font-mono tracking-tight flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">barcode</span>
+          8901234567890
+        </span>
+<div class="flex items-center gap-2">
+<button class="adjust-stock-trigger px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold active:bg-surface-container-high transition-colors" data-curr="45.500" data-name="Super Kernel Basmati Rice" data-unit="kg" type="button">
+            Adjust Stock
+          </button>
+<button class="edit-product-trigger px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold active:bg-surface-container-highest transition-colors" data-cost="280" data-name="Super Kernel Basmati Rice" data-sale="340" type="button">
+            Edit Price
+          </button>
+</div>
+</div>
+</div>
+<!-- Card 2: Dal Chana Special (Low Stock Critical Alert) -->
+<div class="product-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm" data-cat="pulses" data-sku="8909876543210" data-status="low">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex gap-3 min-w-0">
+<img class="w-14 h-14 rounded-lg object-cover flex-shrink-0 bg-surface-container" data-alt="Yellow polished split chickpea Dal Chana piled high in small clay dish on dry grocer market counter sharp studio commercial food detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPHpaIeoEENlvLQi5tM-XkUTPximDoMhtkV7TB-IdrPSGJBEsI1U8qvMEKF6cIZhN9yN-MgYEMekvb9MknovX9CO2uiCAdT_st87n9o-VTNnD-uftfNn89zT4pO942DAw5k7gHsHhGomGWpUN9T_pcrw9MosyTfHoaU1dkjyhwlBPJRlOTWIkufQLrruniuzrD7MIUpGDZfNcvCDQMU389DGPZCv8qXhstfqhccIfEnM0gFrOmziPTPw"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Dal Chana Special</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+<span>Pulses &amp; Spices</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm bg-surface-container-high px-1.5 py-0.5 rounded text-on-surface">Unit: kg</span>
+</div>
+</div>
+</div>
+<!-- Semantic Low Stock Badge -->
+<span class="flex-shrink-0 px-2 py-0.5 rounded font-label-sm text-label-sm font-bold bg-error-container text-on-error-container flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+          CRITICAL LOW
+        </span>
+</div>
+<!-- Metrics Row with Red Alert Highlight -->
+<div class="grid grid-cols-2 gap-2 bg-error-container/20 rounded-lg p-2.5">
+<div class="flex flex-col">
+<span class="text-error font-body-sm text-[11px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+            Stock Depleting
+          </span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-numeric-lg text-numeric-lg font-bold text-error">4.200</span>
+<span class="font-body-sm text-body-sm text-error font-medium">kg</span>
+</div>
+<span class="text-error font-label-sm text-[10px] mt-0.5 font-semibold">Min Threshold: 25.000 kg</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-on-surface-variant font-body-sm text-[11px]">Sale / Cost</span>
+<div class="flex items-baseline justify-end gap-1 mt-0.5">
+<span class="font-numeric-md text-numeric-md font-bold text-on-surface">Rs. 260</span>
+<span class="font-body-sm text-body-sm text-secondary line-through">210</span>
+</div>
+<span class="text-primary font-label-sm text-[11px] font-bold mt-0.5">+23.8% Margin</span>
+</div>
+</div>
+<!-- Quick Buy / Stock-In Action Button -->
+<div class="flex items-center justify-between pt-1 gap-2">
+<span class="font-label-sm text-label-sm text-secondary font-mono tracking-tight flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">barcode</span>
+          8909876543210
+        </span>
+<button class="quick-stock-in-btn px-4 py-2 rounded-lg bg-tertiary text-on-tertiary font-label-md text-label-md font-semibold flex items-center gap-1.5 active:bg-tertiary-container shadow-sm transition-all" data-name="Dal Chana Special" type="button">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+          + Stock In / Buy
+        </button>
+</div>
+</div>
+<!-- Card 3: Nestle Milkpak 1000ml (Dual Multi-Pack Units) -->
+<div class="product-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm" data-cat="dairy" data-sku="8904561237890" data-status="low">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex gap-3 min-w-0">
+<img class="w-14 h-14 rounded-lg object-cover flex-shrink-0 bg-surface-container" data-alt="Carton and individual tetra-pack of Nestle Milkpak 1000ml ultra heat treated long life milk resting on retail cooler shelf commercial product photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCItudczhMlPDjqe1yruaeB-iegN178OndZwaeb6Bv8vyruCdetgcKF0oGaU1h1-53hHFY9ZhcZoxDjIbPV6OQIA3o1xr0c26pyR_I6zL77BGfZtslIjdfELBAIts-fxH90qrHt9TRysTmbc1hE-ANkiaqO0Q17-KiUlUzSK2h3dnydBXp-8CQxo45FOGMzcHNilmvAM0lEPM3eWNUUVGwAEhbggW4UxLx9y0ugj5bdxVtQNxypAxVUTQ"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Nestle Milkpak 1000ml</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+<span>Dairy &amp; Chilled</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm bg-surface-container-high px-1.5 py-0.5 rounded text-on-surface">1 ctn = 12 pkts</span>
+</div>
+</div>
+</div>
+<span class="flex-shrink-0 px-2 py-0.5 rounded font-label-sm text-label-sm font-bold bg-error-container text-on-error-container">
+          LOW STOCK
+        </span>
+</div>
+<!-- Metrics Dual Unit Conversion -->
+<div class="grid grid-cols-2 gap-2 bg-surface-container-low rounded-lg p-2.5">
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-body-sm text-[11px]">Stock Balance</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-numeric-lg text-numeric-lg font-bold text-on-surface">18</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">pkts</span>
+<span class="text-[11px] font-numeric-md text-tertiary-container font-semibold">(1.5 ctn)</span>
+</div>
+<span class="text-secondary font-label-sm text-[10px] mt-0.5">Min: 36 pkts (3 cartons)</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-on-surface-variant font-body-sm text-[11px]">Retail / Cost</span>
+<div class="flex items-baseline justify-end gap-1 mt-0.5">
+<span class="font-numeric-md text-numeric-md font-bold text-on-surface">Rs. 290</span>
+<span class="font-body-sm text-body-sm text-secondary line-through">265</span>
+</div>
+<span class="text-primary font-label-sm text-[11px] font-bold mt-0.5">+9.4% Margin</span>
+</div>
+</div>
+<!-- Quick Action Ergonomic Row -->
+<div class="flex items-center justify-between pt-1 gap-2">
+<span class="font-label-sm text-label-sm text-secondary font-mono tracking-tight flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">barcode</span>
+          8904561237890
+        </span>
+<div class="flex items-center gap-2">
+<button class="adjust-stock-trigger px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold active:bg-surface-container-high transition-colors" data-curr="18" data-name="Nestle Milkpak 1000ml" data-unit="packets" type="button">
+            Adjust
+          </button>
+<button class="quick-stock-in-btn px-3 py-1.5 rounded-lg bg-tertiary text-on-tertiary font-label-md text-label-md font-semibold active:bg-tertiary-container transition-colors" data-name="Nestle Milkpak 1000ml" type="button">
+            + Restock
+          </button>
+</div>
+</div>
+</div>
+<!-- Card 4: Lifebuoy Total Soap 115g (Toiletries - Healthy Quantity) -->
+<div class="product-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm" data-cat="toiletries" data-sku="8901030784912" data-status="instock">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex gap-3 min-w-0">
+<img class="w-14 h-14 rounded-lg object-cover flex-shrink-0 bg-surface-container" data-alt="Pack of red Lifebuoy Total active germ protection hand soap bars wrapped in classic red retail carton display box against clean pharmacy shelf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8WaQznmhBpdGv7L5joHbFNaI_s8_Q-Vc9QLTii1UeDFlH23d_GEhcJCwLhg84iF0C-RyWvYY5hopK7EkXf9UsuNReb9mpABjbdozR15-kDCSEunLnu8FrAkTj4iktER4NczxKZHVNPY44y4MxFO-OuQ1U0C-rnD6qmH5zBdgZjtUz-pxnK8OqW0XwtoFqnf0gZN_EyQ8qZCaNuWmYDjOdugTIyZ4eiuBzmjZBsmGH5prhgQFAMCPi2w"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Lifebuoy Total Soap 115g</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+<span>Toiletries</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm bg-surface-container-high px-1.5 py-0.5 rounded text-on-surface">Unit: pcs</span>
+</div>
+</div>
+</div>
+<span class="flex-shrink-0 px-2 py-0.5 rounded font-label-sm text-label-sm font-bold bg-primary-fixed text-on-primary-fixed-variant">
+          IN STOCK
+        </span>
+</div>
+<!-- Metrics Row -->
+<div class="grid grid-cols-2 gap-2 bg-surface-container-low rounded-lg p-2.5">
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-body-sm text-[11px]">Current Available</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-numeric-lg text-numeric-lg font-bold text-on-surface">72</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">pcs</span>
+</div>
+<span class="text-secondary font-label-sm text-[10px] mt-0.5">Min Alert: 24 pcs</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-on-surface-variant font-body-sm text-[11px]">Sale / Cost</span>
+<div class="flex items-baseline justify-end gap-1 mt-0.5">
+<span class="font-numeric-md text-numeric-md font-bold text-primary">Rs. 135</span>
+<span class="font-body-sm text-body-sm text-secondary line-through">115</span>
+</div>
+<span class="text-primary font-label-sm text-[11px] font-bold mt-0.5">+17.4% (Rs. 20/pc)</span>
+</div>
+</div>
+<!-- Quick Action Ergonomic Row -->
+<div class="flex items-center justify-between pt-1 gap-2">
+<span class="font-label-sm text-label-sm text-secondary font-mono tracking-tight flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">barcode</span>
+          8901030784912
+        </span>
+<div class="flex items-center gap-2">
+<button class="adjust-stock-trigger px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold active:bg-surface-container-high transition-colors" data-curr="72" data-name="Lifebuoy Total Soap 115g" data-unit="pcs" type="button">
+            Adjust Stock
+          </button>
+<button class="edit-product-trigger px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold active:bg-surface-container-highest transition-colors" data-cost="115" data-name="Lifebuoy Total Soap 115g" data-sale="135" type="button">
+            Edit Price
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty / Filter State (Hidden by default) -->
+<div class="hidden px-margin py-10 flex flex-col items-center justify-center text-center" id="no-products-state">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-3 text-secondary">
+<span class="material-symbols-outlined text-[32px]">inventory_2</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">No Products Found</span>
+<p class="font-body-sm text-body-sm text-secondary max-w-xs mt-1">Try switching categories or clear your search term to view products.</p>
+<button class="mt-4 px-4 py-2 bg-surface-container-highest text-on-surface rounded-lg font-label-md text-label-md font-bold" id="reset-filter-btn" type="button">
+      Reset Filters
+    </button>
+</div>
+<!-- FLOATING ACTION BUTTON (ERGONOMIC THUMB ZONE) -->
+<div class="fixed bottom-20 right-4 z-40">
+<button class="h-14 px-5 rounded-2xl bg-primary text-on-primary font-headline-sm text-headline-sm flex items-center gap-2 shadow-[0_8px_20px_rgba(0,92,85,0.35)] active:scale-95 transition-transform" id="fab-add-product" type="button">
+<span class="material-symbols-outlined text-[24px]">add_circle</span>
+<span>Add Item</span>
+</button>
+</div>
+<!-- BACKDROP SHROUD FOR MODALS -->
+<div class="fixed inset-0 bg-on-surface/50 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-200" id="modal-backdrop"></div>
+<!-- BARCODE SCANNER CAMERA SIMULATOR MODAL -->
+<div class="fixed inset-x-0 bottom-0 max-h-[85vh] bg-surface-container-lowest rounded-t-3xl z-50 shadow-2xl flex flex-col p-space-md translate-y-full transition-transform duration-300" id="scanner-modal">
+<div class="w-12 h-1.5 bg-outline-variant rounded-full mx-auto mb-3"></div>
+<div class="flex items-center justify-between pb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">center_focus_strong</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Live Barcode Viewfinder</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant" id="close-scanner-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Camera Viewfinder Box -->
+<div class="relative w-full aspect-video bg-inverse-surface rounded-2xl overflow-hidden my-3 flex items-center justify-center">
+<!-- Simulated camera stream placeholder -->
+<div class="absolute inset-0 bg-cover bg-center opacity-70" data-alt="Shopkeeper hand pointing a phone lens at grocery product barcode packaging under fluorescent store lighting simulated camera stream" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAO5_CUOygds4Ttr6AS6SNQCk2MIzVsoOj8ClvFpy6POl0SrElTFTDzzjb25QpqqNx-_CXotGGA4_DOr_Mdozn4MZXw9QRvudDPlK2BSi75pb311wWo4JBu_IuCnldLXixQTa5NEiUGszdcGqpmGo5FXyQZyKs1-4QSl7EOFk8X1O8wLBK6sWXVA51ShzIPGUIOgt4do01bPn-YspqwoMS0eD-oLNv3ciO7A9DUmiDQuWvlEnsU-9lyxw')"></div>
+<!-- Scanning Target Reticle & Laser Guideline -->
+<div class="relative w-48 h-32 rounded-lg border-2 border-primary-fixed flex flex-col justify-between p-2 shadow-2xl">
+<div class="flex justify-between">
+<span class="w-3 h-3 border-t-2 border-l-2 border-primary"></span>
+<span class="w-3 h-3 border-t-2 border-r-2 border-primary"></span>
+</div>
+<!-- Animated Red Scanline -->
+<div class="w-full h-0.5 bg-error shadow-[0_0_8px_#DC2626] animate-pulse"></div>
+<div class="flex justify-between">
+<span class="w-3 h-3 border-b-2 border-l-2 border-primary"></span>
+<span class="w-3 h-3 border-b-2 border-r-2 border-primary"></span>
+</div>
+</div>
+<div class="absolute bottom-2 inset-x-0 text-center">
+<span class="inline-block px-3 py-1 rounded-full bg-inverse-surface/80 backdrop-blur-md text-surface-bright font-numeric-md text-[11px]">
+          Align code within frame
+        </span>
+</div>
+</div>
+<!-- Quick Scan Test Simulation Buttons -->
+<div class="flex flex-col gap-2">
+<span class="text-on-surface-variant font-body-sm text-[11px] text-center">Tap simulated test SKU barcode:</span>
+<div class="grid grid-cols-2 gap-2">
+<button class="mock-scan-btn p-2 rounded-lg bg-surface-container text-on-surface font-numeric-md text-label-md font-semibold text-center" data-sku="8901234567890" type="button">
+          Rice Basmati
+        </button>
+<button class="mock-scan-btn p-2 rounded-lg bg-surface-container text-on-surface font-numeric-md text-label-md font-semibold text-center" data-sku="8909876543210" type="button">
+          Dal Chana
+        </button>
+</div>
+</div>
+</div>
+<!-- ADD / EDIT PRODUCT BOTTOM DRAWER -->
+<div class="fixed inset-x-0 bottom-0 max-h-[92vh] overflow-y-auto bg-surface-container-lowest rounded-t-3xl z-50 shadow-2xl flex flex-col p-space-md translate-y-full transition-transform duration-300" id="product-form-drawer">
+<div class="w-12 h-1.5 bg-outline-variant rounded-full mx-auto mb-2 flex-shrink-0"></div>
+<div class="flex items-center justify-between pb-3 flex-shrink-0">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" id="drawer-icon">add_box</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface" id="drawer-title">Add New Product</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant" id="close-drawer-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Form Container -->
+<form class="flex flex-col gap-space-md pb-6" id="item-form" onsubmit="event.preventDefault();">
+<!-- Item Name -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="form-name">Product Name *</label>
+<input class="w-full bg-surface-container-low text-on-surface rounded-xl px-3.5 py-3 font-body-md text-sm border-none outline-none focus:bg-surface-container" id="form-name" placeholder="e.g. Tapal Danedar Tea 450g" required="" type="text"/>
+</div>
+<!-- Category & Base Unit Row -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="form-category">Category</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-low text-on-surface rounded-xl px-3 py-3 font-body-md text-sm border-none outline-none focus:bg-surface-container font-medium cursor-pointer" id="form-category">
+<option value="grocery">Grocery</option>
+<option value="dairy">Dairy</option>
+<option value="pulses">Pulses &amp; Spices</option>
+<option value="toiletries">Toiletries</option>
+<option value="beverages">Beverages</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-3.5 text-on-surface-variant pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="form-unit">Base Unit</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-low text-on-surface rounded-xl px-3 py-3 font-body-md text-sm border-none outline-none focus:bg-surface-container font-medium cursor-pointer" id="form-unit">
+<option value="kg">kg (Kilogram)</option>
+<option value="pcs">pcs (Pieces)</option>
+<option value="packet">packet</option>
+<option value="carton">carton</option>
+<option value="litre">litre</option>
+<option value="gram">gram</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-3.5 text-on-surface-variant pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Pricing & Profit Calculator Strip -->
+<div class="bg-surface-container-low rounded-2xl p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Financials &amp; Margin</span>
+<!-- Live Calculated Badge -->
+<span class="px-2 py-0.5 rounded font-numeric-md text-[11px] font-bold bg-primary text-on-primary" id="margin-calc-pill">
+            Margin: 0.0%
+          </span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Purchase Price -->
+<div class="flex flex-col gap-1">
+<span class="font-body-sm text-[11px] text-on-surface-variant">Cost Price (Rs.) *</span>
+<div class="flex items-center bg-surface-container-lowest rounded-xl px-3 py-2.5 shadow-sm">
+<span class="font-numeric-md text-secondary mr-1">Rs.</span>
+<input class="w-full bg-transparent border-none outline-none font-numeric-md text-on-surface font-bold text-sm" id="form-cost" placeholder="0.00" required="" step="0.01" type="number"/>
+</div>
+</div>
+<!-- Sale Price -->
+<div class="flex flex-col gap-1">
+<span class="font-body-sm text-[11px] text-on-surface-variant">Sale Price (Rs.) *</span>
+<div class="flex items-center bg-surface-container-lowest rounded-xl px-3 py-2.5 shadow-sm">
+<span class="font-numeric-md text-primary mr-1">Rs.</span>
+<input class="w-full bg-transparent border-none outline-none font-numeric-md text-primary font-bold text-sm" id="form-sale" placeholder="0.00" required="" step="0.01" type="number"/>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant font-body-sm pt-1">
+<span>Profit per unit:</span>
+<span class="font-numeric-md font-bold text-on-surface" id="profit-calc-text">Rs. 0.00</span>
+</div>
+</div>
+<!-- Stock Numbers (Decimal Enabled) & Alert Threshold -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="form-stock">Opening Stock *</label>
+<input class="w-full bg-surface-container-low text-on-surface rounded-xl px-3.5 py-3 font-numeric-md text-sm border-none outline-none focus:bg-surface-container font-semibold" id="form-stock" placeholder="0.000" required="" step="0.001" type="number"/>
+<span class="text-[10px] text-secondary font-body-sm">Decimal (e.g. 2.500)</span>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="form-min-stock">Min Stock Alert</label>
+<input class="w-full bg-surface-container-low text-on-surface rounded-xl px-3.5 py-3 font-numeric-md text-sm border-none outline-none focus:bg-surface-container" id="form-min-stock" placeholder="5.000" step="0.001" type="number"/>
+<span class="text-[10px] text-secondary font-body-sm">Trigger warning</span>
+</div>
+</div>
+<!-- Barcode Input with Scan Shortcut -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="form-barcode">Barcode / SKU</label>
+<div class="flex items-center bg-surface-container-low rounded-xl px-3 py-1.5 focus-within:bg-surface-container">
+<span class="material-symbols-outlined text-secondary text-[20px] mr-2">barcode</span>
+<input class="w-full bg-transparent border-none outline-none font-numeric-md text-on-surface text-sm" id="form-barcode" placeholder="Scan or type barcode digits" type="text"/>
+<button class="p-2 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold" id="form-scan-trigger" type="button">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</button>
+</div>
+</div>
+<!-- Submit Action Button (52px Touch Ergonomics) -->
+<button class="h-[52px] w-full mt-2 rounded-xl bg-primary text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 shadow-md active:bg-primary-container transition-all" id="save-item-btn" type="submit">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span id="save-btn-label">Save &amp; Update Stock</span>
+</button>
+</form>
+</div>
+<!-- TOAST NOTIFICATION CONTAINER -->
+<div class="fixed top-16 inset-x-4 z-50 pointer-events-none transform -translate-y-6 opacity-0 transition-all duration-300 flex items-center justify-center" id="toast">
+<div class="bg-inverse-surface text-surface-bright px-4 py-2.5 rounded-xl shadow-xl flex items-center gap-2 font-label-md text-sm">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]" id="toast-icon">check_circle</span>
+<span id="toast-message">Stock updated successfully!</span>
+</div>
+</div>
+</div>
+<script>
+  (function initInventoryApp() {
+    // DOM Element References
+    const backdrop = document.getElementById('modal-backdrop');
+    const scannerModal = document.getElementById('scanner-modal');
+    const productDrawer = document.getElementById('product-form-drawer');
+    const openScannerBtn = document.getElementById('open-scanner-btn');
+    const closeScannerBtn = document.getElementById('close-scanner-btn');
+    const openAddDrawerBtn = document.getElementById('open-add-drawer-btn');
+    const fabAddProduct = document.getElementById('fab-add-product');
+    const closeDrawerBtn = document.getElementById('close-drawer-btn');
+    const formScanTrigger = document.getElementById('form-scan-trigger');
+
+    const formCost = document.getElementById('form-cost');
+    const formSale = document.getElementById('form-sale');
+    const marginCalcPill = document.getElementById('margin-calc-pill');
+    const profitCalcText = document.getElementById('profit-calc-text');
+    const saveItemBtn = document.getElementById('save-item-btn');
+    const saveBtnLabel = document.getElementById('save-btn-label');
+    const drawerTitle = document.getElementById('drawer-title');
+    const formName = document.getElementById('form-name');
+    const formBarcode = document.getElementById('form-barcode');
+    const formStock = document.getElementById('form-stock');
+
+    const searchInput = document.getElementById('product-search-input');
+    const voiceSearchBtn = document.getElementById('voice-search-btn');
+    const categoryFilter = document.getElementById('category-filter');
+    const statusPills = document.querySelectorAll('.status-pill');
+    const productItems = document.querySelectorAll('.product-item');
+    const noProductsState = document.getElementById('no-products-state');
+    const resetFilterBtn = document.getElementById('reset-filter-btn');
+
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toast-message');
+
+    function showToast(msg, isSuccess = true) {
+      if (!toast) return;
+      toastMessage.textContent = msg;
+      toast.classList.remove('-translate-y-6', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('-translate-y-6', 'opacity-0');
+      }, 2400);
+    }
+
+    function openModal(modalEl) {
+      backdrop.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        backdrop.classList.add('opacity-100');
+        modalEl.classList.remove('translate-y-full');
+      });
+    }
+
+    function closeModal() {
+      scannerModal.classList.add('translate-y-full');
+      productDrawer.classList.add('translate-y-full');
+      backdrop.classList.remove('opacity-100');
+      setTimeout(() => {
+        backdrop.classList.add('hidden');
+      }, 200);
+    }
+
+    // Modal Triggers
+    if (openScannerBtn) {
+      openScannerBtn.addEventListener('click', () => openModal(scannerModal));
+    }
+    if (closeScannerBtn) {
+      closeScannerBtn.addEventListener('click', closeModal);
+    }
+    if (formScanTrigger) {
+      formScanTrigger.addEventListener('click', () => {
+        closeModal();
+        setTimeout(() => openModal(scannerModal), 250);
+      });
+    }
+
+    function resetDrawerToAdd() {
+      drawerTitle.textContent = "Add New Product";
+      saveBtnLabel.textContent = "Save & Add to Catalog";
+      formName.value = '';
+      formCost.value = '';
+      formSale.value = '';
+      formStock.value = '';
+      formBarcode.value = '';
+      marginCalcPill.textContent = "Margin: 0.0%";
+      profitCalcText.textContent = "Rs. 0.00";
+    }
+
+    if (openAddDrawerBtn) {
+      openAddDrawerBtn.addEventListener('click', () => {
+        resetDrawerToAdd();
+        openModal(productDrawer);
+      });
+    }
+    if (fabAddProduct) {
+      fabAddProduct.addEventListener('click', () => {
+        resetDrawerToAdd();
+        openModal(productDrawer);
+      });
+    }
+    if (closeDrawerBtn) {
+      closeDrawerBtn.addEventListener('click', closeModal);
+    }
+    if (backdrop) {
+      backdrop.addEventListener('click', closeModal);
+    }
+
+    // Live Margin & Profit Calculator in Drawer Form
+    function updateCalculatedMargin() {
+      const cost = parseFloat(formCost.value) || 0;
+      const sale = parseFloat(formSale.value) || 0;
+      const profit = sale - cost;
+
+      if (sale > 0 && cost > 0) {
+        const marginPct = ((profit / sale) * 100).toFixed(1);
+        marginCalcPill.textContent = (marginPct >= 0 ? '+' : '') + marginPct + '% Margin';
+        profitCalcText.textContent = 'Rs. ' + profit.toFixed(2);
+        
+        if (profit >= 0) {
+          marginCalcPill.className = "px-2 py-0.5 rounded font-numeric-md text-[11px] font-bold bg-primary text-on-primary";
+        } else {
+          marginCalcPill.className = "px-2 py-0.5 rounded font-numeric-md text-[11px] font-bold bg-error text-on-error";
+        }
+      } else {
+        marginCalcPill.textContent = "Margin: 0.0%";
+        profitCalcText.textContent = "Rs. 0.00";
+      }
+    }
+
+    if (formCost && formSale) {
+      formCost.addEventListener('input', updateCalculatedMargin);
+      formSale.addEventListener('input', updateCalculatedMargin);
+    }
+
+    // Save/Update Form Handler
+    if (saveItemBtn) {
+      saveItemBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const itemName = formName.value.trim();
+        if (!itemName) {
+          showToast('Please enter product name', false);
+          return;
+        }
+        closeModal();
+        showToast('"' + itemName + '" saved successfully!');
+      });
+    }
+
+    // Edit Product Card Actions
+    document.querySelectorAll('.edit-product-trigger').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const name = btn.dataset.name;
+        const sale = btn.dataset.sale;
+        const cost = btn.dataset.cost;
+        drawerTitle.textContent = "Update Price: " + name;
+        saveBtnLabel.textContent = "Update Selling Price";
+        formName.value = name;
+        formSale.value = sale;
+        formCost.value = cost;
+        updateCalculatedMargin();
+        openModal(productDrawer);
+      });
+    });
+
+    // Quick Stock Adjustment Action
+    document.querySelectorAll('.adjust-stock-trigger').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const name = btn.dataset.name;
+        const curr = btn.dataset.curr;
+        const unit = btn.dataset.unit;
+        drawerTitle.textContent = "Adjust Stock: " + name;
+        saveBtnLabel.textContent = "Confirm Stock Adjustment";
+        formName.value = name;
+        formStock.value = curr;
+        openModal(productDrawer);
+      });
+    });
+
+    // Quick Buy Stock In Action
+    document.querySelectorAll('.quick-stock-in-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const name = btn.dataset.name;
+        showToast('Purchase Order generated for ' + name);
+      });
+    });
+
+    // Mock Scanner Simulation Buttons
+    document.querySelectorAll('.mock-scan-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sku = btn.dataset.sku;
+        closeModal();
+        if (searchInput) {
+          searchInput.value = sku;
+          applyFiltering();
+        }
+        showToast('Scanned SKU: ' + sku);
+      });
+    });
+
+    // Voice Search Speech Simulation
+    if (voiceSearchBtn) {
+      voiceSearchBtn.addEventListener('click', () => {
+        showToast('Listening... Speak product name');
+        setTimeout(() => {
+          if (searchInput) {
+            searchInput.value = 'Basmati Rice';
+            applyFiltering();
+            showToast('Voice matched: "Basmati Rice"');
+          }
+        }, 1200);
+      });
+    }
+
+    // Filtering Logic (Search + Category + Status Pills)
+    let currentFilter = 'all';
+
+    statusPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        statusPills.forEach(p => {
+          p.classList.remove('active-pill', 'bg-inverse-surface', 'text-on-primary');
+          p.classList.add('bg-surface-container-high', 'text-on-surface');
+        });
+        pill.classList.add('active-pill', 'bg-inverse-surface', 'text-on-primary');
+        pill.classList.remove('bg-surface-container-high', 'text-on-surface');
+        currentFilter = pill.dataset.filter;
+        applyFiltering();
+      });
+    });
+
+    if (categoryFilter) {
+      categoryFilter.addEventListener('change', applyFiltering);
+    }
+    if (searchInput) {
+      searchInput.addEventListener('input', applyFiltering);
+    }
+
+    function applyFiltering() {
+      const query = (searchInput ? searchInput.value.toLowerCase().trim() : '');
+      const catVal = categoryFilter ? categoryFilter.value : 'all';
+      let visibleCount = 0;
+
+      productItems.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const sku = card.dataset.sku || '';
+        const cat = card.dataset.cat || '';
+        const status = card.dataset.status || '';
+
+        const matchesQuery = !query || text.includes(query) || sku.includes(query);
+        const matchesCategory = (catVal === 'all') || (cat === catVal);
+        const matchesStatus = (currentFilter === 'all') || (status === currentFilter);
+
+        if (matchesQuery && matchesCategory && matchesStatus) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (noProductsState) {
+        if (visibleCount === 0) {
+          noProductsState.classList.remove('hidden');
+        } else {
+          noProductsState.classList.add('hidden');
+        }
+      }
+    }
+
+    if (resetFilterBtn) {
+      resetFilterBtn.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        if (categoryFilter) categoryFilter.value = 'all';
+        currentFilter = 'all';
+        statusPills.forEach((p, idx) => {
+          if (idx === 0) {
+            p.classList.add('active-pill', 'bg-inverse-surface', 'text-on-primary');
+          } else {
+            p.classList.remove('active-pill', 'bg-inverse-surface', 'text-on-primary');
+          }
+        });
+        applyFiltering();
+      });
+    }
+
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-inverse-surface shadow-[0_-4px_16px_rgba(15,23,42,0.12)]" data-active-classes="text-primary-fixed"><div class="flex justify-between items-center h-16 px-space-xs"><a class="flex-1 flex flex-col items-center justify-center h-14 min-w-[44px] text-surface-container-high transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Home</span></a><a class="flex-1 flex flex-col items-center justify-center h-14 min-w-[44px] -mt-3 text-on-primary-fixed-variant" data-path="pos-terminal" href="#"><div class="w-11 h-11 rounded-xl bg-primary-fixed flex items-center justify-center shadow-md text-on-primary-fixed"><span class="material-symbols-outlined text-[24px]">point_of_sale</span></div><span class="font-label-sm text-label-sm text-primary-fixed mt-1 tracking-tight">POS</span></a><a aria-current="page" class="flex-1 flex flex-col items-center justify-center h-14 min-w-[44px] transition-colors text-primary-fixed" data-path="inventory" href="#"><span class="material-symbols-outlined text-[22px]">inventory_2</span><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Stock</span></a><a class="flex-1 flex flex-col items-center justify-center h-14 min-w-[44px] relative text-surface-container-high transition-colors" data-path="khata-ledger" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[22px]">menu_book</span><span class="absolute -top-1 -right-4 px-1 py-0.2 rounded bg-tertiary-fixed text-on-tertiary-fixed font-numeric-md text-[9px] font-bold leading-none">₹42k</span></div><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Khata</span></a><a class="flex-1 flex flex-col items-center justify-center h-14 min-w-[44px] text-surface-container-high transition-colors" data-path="hub-menu" href="#"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">More</span></a></div></nav></body></html>
